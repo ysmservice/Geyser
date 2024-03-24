@@ -24,6 +24,8 @@ dependencyResolutionManagement {
             mavenContent { releasesOnly() }
         }
 
+        // Minecraft Forge
+        maven ("https://maven.minecraaftforge.net/")
         // Minecraft
         maven("https://libraries.minecraft.net") {
             name = "minecraft"
@@ -55,6 +57,7 @@ pluginManagement {
         maven("https://maven.fabricmc.net/")
         maven("https://maven.architectury.dev/")
         maven("https://maven.neoforged.net/releases")
+        maven ("https://maven.minecraaftforge.net/")
     }
     includeBuild("build-logic")
 }
@@ -66,6 +69,7 @@ include(":api")
 include(":bungeecord")
 include(":fabric")
 include(":neoforge")
+include(":forge")
 include(":mod")
 include(":spigot")
 include(":standalone")
@@ -78,6 +82,7 @@ include(":core")
 project(":bungeecord").projectDir = file("bootstrap/bungeecord")
 project(":fabric").projectDir = file("bootstrap/mod/fabric")
 project(":neoforge").projectDir = file("bootstrap/mod/neoforge")
+project(":forge").projectDir = file("bootstrap/mod/forge")
 project(":mod").projectDir = file("bootstrap/mod")
 project(":spigot").projectDir = file("bootstrap/spigot")
 project(":standalone").projectDir = file("bootstrap/standalone")
