@@ -63,6 +63,10 @@ tasks {
         // The remapped shadowJar is the final desired mod jar
         archiveVersion.set(project.version.toString())
         archiveClassifier.set("shaded")
+        relocate("org.objectweb.asm", "org.geysermc.relocate.asm")
+        relocate("org.yaml", "org.geysermc.relocate.yaml") // https://github.com/CardboardPowered/cardboard/issues/139
+        relocate("com.fasterxml.jackson", "org.geysermc.relocate.jackson")
+        relocate("net.kyori", "org.geysermc.relocate.kyori")
     }
 
     remapJar {
